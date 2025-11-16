@@ -26,7 +26,10 @@ export const BenefitsSection = () => {
         <h2 className="text-2xl font-semibold text-center mb-12">Why Choose Us</h2>
         <div className="grid md:grid-cols-3 gap-6">
           {benefits.map((benefit) => (
-            <Card key={benefit.title} className="border-border">
+            <Card
+              key={benefit.title}
+              className="border-border transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+            >
               <CardHeader>
                 <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                   <benefit.icon className="h-6 w-6 text-primary" />
