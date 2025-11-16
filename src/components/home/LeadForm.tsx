@@ -6,6 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
+import { User, Phone, Car, MessageSquare, Shield } from "lucide-react";
 
 export const LeadForm = () => {
   const { toast } = useToast();
@@ -35,7 +36,7 @@ export const LeadForm = () => {
   };
 
   return (
-    <Card className="border-border shadow-sm">
+    <Card className="border-border shadow-lg">
       <CardHeader>
         <CardTitle>Get Your Quote</CardTitle>
         <CardDescription>Fill in your details and we'll get back to you</CardDescription>
@@ -44,65 +45,84 @@ export const LeadForm = () => {
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="name">Full Name</Label>
-            <Input
-              id="name"
-              placeholder="Enter your name"
-              value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              required
-            />
+            <div className="relative">
+              <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Input
+                id="name"
+                placeholder="Enter your name"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                required
+                className="pl-10"
+              />
+            </div>
           </div>
 
           <div className="space-y-2">
             <Label htmlFor="phone">Phone Number</Label>
-            <Input
-              id="phone"
-              type="tel"
-              placeholder="Enter your phone number"
-              value={formData.phone}
-              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-              required
-            />
+            <div className="relative">
+              <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Input
+                id="phone"
+                type="tel"
+                placeholder="Enter your phone number"
+                value={formData.phone}
+                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                required
+                className="pl-10"
+              />
+            </div>
           </div>
 
           <div className="space-y-2">
             <Label htmlFor="insuranceType">Insurance Type</Label>
-            <Select
-              value={formData.insuranceType}
-              onValueChange={(value) => setFormData({ ...formData, insuranceType: value })}
-              required
-            >
-              <SelectTrigger>
-                <SelectValue placeholder="Select insurance type" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="car">Car</SelectItem>
-                <SelectItem value="bike">Bike</SelectItem>
-                <SelectItem value="auto">Auto</SelectItem>
-                <SelectItem value="commercial">Commercial</SelectItem>
-              </SelectContent>
-            </Select>
+            <div className="relative">
+              <Shield className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground z-10" />
+              <Select
+                value={formData.insuranceType}
+                onValueChange={(value) => setFormData({ ...formData, insuranceType: value })}
+                required
+              >
+                <SelectTrigger className="pl-10">
+                  <SelectValue placeholder="Select insurance type" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="car">Car</SelectItem>
+                  <SelectItem value="bike">Bike</SelectItem>
+                  <SelectItem value="auto">Auto</SelectItem>
+                  <SelectItem value="commercial">Commercial</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
           </div>
 
           <div className="space-y-2">
             <Label htmlFor="vehicleNumber">Vehicle Number</Label>
-            <Input
-              id="vehicleNumber"
-              placeholder="KA-01-AB-1234"
-              value={formData.vehicleNumber}
-              onChange={(e) => setFormData({ ...formData, vehicleNumber: e.target.value })}
-            />
+            <div className="relative">
+              <Car className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Input
+                id="vehicleNumber"
+                placeholder="KA-01-AB-1234"
+                value={formData.vehicleNumber}
+                onChange={(e) => setFormData({ ...formData, vehicleNumber: e.target.value })}
+                className="pl-10"
+              />
+            </div>
           </div>
 
           <div className="space-y-2">
             <Label htmlFor="message">Message (Optional)</Label>
-            <Textarea
-              id="message"
-              placeholder="Any specific requirements?"
-              value={formData.message}
-              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              rows={3}
-            />
+            <div className="relative">
+              <MessageSquare className="absolute left-3 top-3.5 h-4 w-4 text-muted-foreground" />
+              <Textarea
+                id="message"
+                placeholder="Any specific requirements?"
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                rows={3}
+                className="pl-10"
+              />
+            </div>
           </div>
 
           <Button type="submit" className="w-full">
