@@ -77,6 +77,15 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
+    /* Add subtle dot pattern */
+    background-image: radial-gradient(hsl(var(--muted)) 1px, transparent 1px);
+    background-size: 16px 16px;
+  }
+
+  .dark body {
+    /* Add subtler dot pattern for dark mode */
+    background-image: radial-gradient(hsl(var(--muted) / 0.5) 1px, transparent 1px);
+    background-size: 16px 16px;
   }
 
   h1, h2, h3, h4, h5, h6 {
