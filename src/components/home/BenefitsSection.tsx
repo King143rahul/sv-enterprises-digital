@@ -1,4 +1,4 @@
-import { DollarSign, Zap, Building2 } from "lucide-react";
+import { DollarSign, Rocket, Shield } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const BenefitsSection = () => {
@@ -9,12 +9,12 @@ export const BenefitsSection = () => {
       description: "Competitive rates from top insurance companies",
     },
     {
-      icon: Zap,
+      icon: Rocket,
       title: "Fast Claim Support",
       description: "Quick and hassle-free claim processing",
     },
     {
-      icon: Building2,
+      icon: Shield,
       title: "All Company Policies",
       description: "Access to policies from leading insurers",
     },
