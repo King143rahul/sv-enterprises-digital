@@ -39,6 +39,7 @@ All colors MUST be HSL.
     --radius: 0.5rem;
   }
 
+  /* ADD THIS ENTIRE .dark BLOCK */
   .dark {
     --background: 222 47% 11%;
     --foreground: 210 40% 98%;
@@ -82,6 +83,7 @@ All colors MUST be HSL.
     background-size: 16px 16px;
   }
 
+  /* ADD THIS .dark body BLOCK */
   .dark body {
     /* Add subtler dot pattern for dark mode */
     background-image: radial-gradient(hsl(var(--muted) / 0.5) 1px, transparent 1px);
