@@ -14,11 +14,12 @@ export const LocationSection = () => {
                 <div>
                   <p className="font-medium mb-1">Address</p>
                   <p className="text-sm text-muted-foreground">
-                    SV Enterprises<br />
+                    SV Enterprises
+                    <br />
                     Rajajinagar, Bangalore
                   </p>
                   <a
-                    href="https://maps.app.goo.gl/ihBRHowvEB6kyXPY8"
+                    href="https://www.google.com/maps/place/Rajajinagar,+Bengaluru,+Karnataka"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm text-primary hover:underline inline-block mt-2"
@@ -33,9 +34,13 @@ export const LocationSection = () => {
                 <div>
                   <p className="font-medium mb-1">Phone</p>
                   <p className="text-sm text-muted-foreground">
-                    <a href="tel:9380858219" className="hover:text-primary">9380858219</a>
+                    <a href="tel:9380858219" className="hover:text-primary">
+                      9380858219
+                    </a>
                     {" / "}
-                    <a href="tel:7411812788" className="hover:text-primary">7411812788</a>
+                    <a href="tel:7411812788" className="hover:text-primary">
+                      7411812788
+                    </a>
                   </p>
                 </div>
               </div>
@@ -55,8 +60,17 @@ export const LocationSection = () => {
             </CardContent>
           </Card>
 
-          <div className="rounded-lg overflow-hidden border border-border bg-muted h-[300px] flex items-center justify-center">
-            <p className="text-muted-foreground">Map Placeholder</p>
+          <div className="rounded-lg overflow-hidden border border-border bg-muted h-[300px]">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31100.11186791781!2d77.534244719283!3d12.993077625121417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3d8d6415c3c9%3A0xad1e0b9a68c0f3f2!2sRajajinagar%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1731750000000!5m2!1sen!2sin"
+              width="100%"
+              height="300"
+              style={{ border: 0 }}
+              allowFullScreen={false}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="SV Enterprises Location"
+            ></iframe>
           </div>
         </div>
       </div>
