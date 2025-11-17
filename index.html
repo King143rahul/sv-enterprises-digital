@@ -1,27 +1,1111 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SV Enterprises - Motor & Vehicle Insurance Bangalore</title>
-    <meta name="description" content="Get fast & affordable vehicle insurance in Bangalore. Trusted motor insurance service provider offering car, bike, auto, and commercial vehicle insurance." />
-    <meta name="author" content="SV Enterprises" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SV ENTERPRISES - Affordable Motor Insurance in Bangalore</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <meta property="og:title" content="SV Enterprises - Motor & Vehicle Insurance Bangalore" />
-    <meta property="og:description" content="Get fast & affordable vehicle insurance in Bangalore. Trusted motor insurance service provider." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <style>
+        /* ---------------------------------------- */
+        /* BASE & RESET STYLES                      */
+        /* ---------------------------------------- */
+        :root {
+            --color-primary: #007AFF; /* Professional Blue */
+            --color-primary-light: #EBF5FF; /* Very Light Blue */
+            --color-primary-dark: #0056b3;
+            --color-white: #FFFFFF;
+            --color-dark: #1D2430; /* For headings */
+            --color-text: #555E6D; /* For body text */
+            --color-text-light: #7A869A;
+            --color-border: #EAEFF5;
+            --color-bg-light: #F7F9FC; /* Base for light sections */
+            --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.04);
+            --shadow-medium: 0 8px 24px rgba(0, 0, 0, 0.08);
+            --border-radius: 12px;
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@Lovable" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-family);
+            background-color: var(--color-white); /* Solid white base */
+            color: var(--color-text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            position: relative; /* For background texture */
+        }
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+        /* Background Texture */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            /* Subtle dot grid texture */
+            background-image: radial-gradient(var(--color-border) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+
+        .container {
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--color-dark);
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        h1 { font-size: 2.75rem; /* 44px */ }
+        h2 { font-size: 2.25rem; /* 36px */ text-align: center; margin-bottom: 3.5rem; }
+        h3 { font-size: 1.25rem; /* 20px */ margin-bottom: 0.5rem; }
+        h4 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+
+        p { margin-bottom: 1rem; color: var(--color-text); }
+        section { 
+            padding: 5rem 0; 
+            overflow: hidden; 
+            border-bottom: 1px solid var(--color-border);
+            position: relative;
+        }
+        
+        /* SECTION STYLES with Texture */
+        .section-light { 
+            background-color: var(--color-bg-light);
+            background-image: radial-gradient(rgba(0, 122, 255, 0.07) 1px, transparent 1px);
+            background-size: 25px 25px;
+        }
+        .section-white { 
+            background-color: var(--color-white); /* Solid white */
+        }
+
+        /* ---------------------------------------- */
+        /* SCROLL ANIMATIONS                        */
+        /* ---------------------------------------- */
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .animate-fade-in {
+            transform: translateY(20px);
+        }
+        .animate-slide-left {
+            transform: translateX(-30px);
+        }
+        .animate-slide-right {
+            transform: translateX(30px);
+        }
+        .is-visible {
+            opacity: 1;
+            transform: translateY(0) translateX(0);
+        }
+
+
+        /* ---------------------------------------- */
+        /* COMPONENT: BUTTONS                       */
+        /* ---------------------------------------- */
+        .btn {
+            display: inline-block;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 0.85rem 1.75rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        .btn i { margin-right: 8px; }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            box-shadow: 0 4px 15px rgba(0, 122, 255, 0.2);
+        }
+        .btn-primary:hover {
+            background-color: var(--color-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 122, 255, 0.3);
+        }
+        
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: var(--color-white);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
+        }
+        .btn-whatsapp:hover {
+            background-color: #1FAF54;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: var(--color-white);
+            color: var(--color-primary);
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-soft);
+        }
+        .btn-secondary:hover {
+            background-color: var(--color-bg-light);
+            transform: translateY(-2px);
+        }
+
+        /* ---------------------------------------- */
+        /* HEADER (NAVBAR)                          */
+        /* ---------------------------------------- */
+        .navbar {
+            padding: 1.25rem 0;
+            background: rgba(255, 255, 255, 0.9);
+            border-bottom: 1px solid var(--color-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--color-dark);
+            text-decoration: none;
+            line-height: 1.1;
+        }
+        .navbar-brand span {
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--color-primary);
+            display: block;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Navigation Links */
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+        .nav-menu li a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 0.5rem 0.25rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .nav-menu li a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-primary);
+            transition: width 0.3s ease;
+        }
+        .nav-menu li a:hover,
+        .nav-menu li a:focus {
+            color: var(--color-dark);
+        }
+        .nav-menu li a:hover:after,
+        .nav-menu li a:focus:after {
+            width: 100%;
+        }
+        .nav-contact-btn {
+            display: none; /* Hide by default, show on mobile */
+        }
+
+        /* ---------------------------------------- */
+        /* SECTION 1: HERO                          */
+        /* ---------------------------------------- */
+        #hero {
+            padding: 6rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        #hero .container {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 3rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        .hero-content h1 {
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        .hero-content .subtitle {
+            font-size: 1.25rem;
+            color: var(--color-text);
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        /* Hero Illustrations */
+        .hero-image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        .hero-svg-car, .hero-svg-bike {
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+        .hero-svg-car {
+            width: 140px;
+            animation: fadeIn 1s 0.6s ease-out forwards, float-anim 6s ease-in-out infinite 1s;
+        }
+        .hero-svg-bike {
+            width: 120px;
+            animation: fadeIn 1s 0.8s ease-out forwards, float-anim 7s ease-in-out infinite 0.5s;
+        }
+
+        /* ---------------------------------------- */
+        /* LEAD FORM CARD                           */
+        /* ---------------------------------------- */
+        .hero-form-card {
+            background: var(--color-white); /* Solid white card */
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-medium);
+            padding: 2.5rem;
+            position: relative;
+            z-index: 5;
+        }
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--color-dark);
+        }
+        .form-control {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            font-family: var(--font-family);
+            font-size: 1rem;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            background-color: var(--color-bg-light);
+            transition: all 0.3s ease;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            background-color: var(--color-white);
+            box-shadow: 0 0 0 3px var(--color-primary-light);
+        }
+        .form-control::placeholder { color: #99A1AF; }
+        .form-group.optional-label label::after {
+            content: "(optional)";
+            font-weight: 400;
+            font-size: 0.8rem;
+            color: var(--color-text-light);
+            margin-left: 6px;
+        }
+        .form-group-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        /* ---------------------------------------- */
+        /* SECTION 2: LOGOS (INSURERS)              */
+        /* ---------------------------------------- */
+        #logos {
+            padding: 3rem 0;
+        }
+        #logos h3 {
+            text-align: center;
+            font-weight: 500;
+            color: var(--color-text-light);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+        .logo-grid {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            filter: grayscale(100%);
+            opacity: 0.7;
+        }
+        .logo-item {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-text-light);
+            font-style: italic;
+        }
+
+        /* ---------------------------------------- */
+        /* SECTION 3: ABOUT US                      */
+        /* ---------------------------------------- */
+        .two-column-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .two-column-layout .image-container {
+            width: 100%;
+            height: 400px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+            
+            /* FIXED: Simple, reliable placeholder */
+            background-color: var(--color-primary-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-primary);
+            font-size: 2rem;
+            font-weight: 600;
+        }
+        .two-column-layout .image-container .icon {
+            font-size: 4rem;
+        }
+        
+        .two-column-layout h2 {
+            text-align: left;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* ---------------------------------------- */
+        /* SECTION 4: PRODUCTS                      */
+        /* ---------------------------------------- */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        .product-card {
+            background: var(--color-white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-soft);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--color-primary);
+        }
+        .product-card .icon {
+            font-size: 3rem;
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+        }
+        .product-card h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ---------------------------------------- */
+        /* SECTION 5: BENEFITS                      */
+        /* ---------------------------------------- */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .benefit-card {
+            background: var(--color-white);
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-soft);
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+        .benefit-card .icon {
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+            background-color: var(--color-primary-light);
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            border-radius: 50%;
+            display: inline-block;
+            text-align: center;
+        }
+        .benefit-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* ---------------------------------------- */
+        /* SECTION 6: COUNTERS                      */
+        /* ---------------------------------------- */
+        .counter-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .counter-item {
+            text-align: center;
+        }
+        .counter-item .number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--color-primary);
+            line-height: 1.2;
+        }
+        .counter-item p {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--color-text);
+            margin: 0;
+        }
+
+        /* ---------------------------------------- */
+        /* SECTION 7: CLAIMS                        */
+        /* ---------------------------------------- */
+        .claims-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .claim-step {
+            text-align: center;
+            padding: 2rem;
+        }
+        .claim-step .icon {
+            font-size: 3rem;
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+        }
+        .claim-step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        .claim-step .step-number {
+            display: block;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* ---------------------------------------- */
+        /* SECTION 8: CONTACT (FORM + MAP)          */
+        /* ---------------------------------------- */
+        #contact .container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .contact-info h2 {
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            gap: 1.5rem;
+        }
+        .contact-item .icon {
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            background-color: var(--color-primary-light);
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 50%;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        .contact-item-content strong {
+            display: block;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--color-dark);
+            margin-bottom: 0.25rem;
+        }
+        .contact-item-content a {
+            color: var(--color-text);
+            text-decoration: none;
+        }
+        .contact-item-content a:hover {
+            color: var(--color-primary);
+            text-decoration: underline;
+        }
+        
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+        }
+        .map-placeholder iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* ---------------------------------------- */
+        /* FOOTER                                   */
+        /* ---------------------------------------- */
+        footer {
+            padding: 3rem 0;
+            background-color: var(--color-dark);
+            color: var(--color-text-light);
+            border-bottom: 0;
+        }
+        .footer-content {
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        .footer-content p {
+            margin-bottom: 0.5rem;
+            color: var(--color-text-light);
+        }
+        .footer-content a {
+            color: var(--color-text-light);
+            text-decoration: none;
+        }
+        .footer-content a:hover {
+            color: var(--color-white);
+            text-decoration: underline;
+        }
+        .footer-brand {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-white);
+            margin-bottom: 1rem;
+        }
+        .footer-copyright {
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            border-top: 1px solid #444;
+            padding-top: 1.5rem;
+        }
+
+        /* ---------------------------------------- */
+        /* RESPONSIVE DESIGN                        */
+        /* ---------------------------------------- */
+        @media (max-width: 992px) {
+            h1 { font-size: 2.25rem; }
+            h2 { font-size: 1.75rem; }
+            
+            /* Mobile Nav */
+            .nav-menu {
+                display: none; /* Hide menu on tablet/mobile */
+            }
+            .nav-contact-btn {
+                display: block; /* Show contact btn */
+            }
+
+            #hero .container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .hero-content {
+                text-align: center;
+                order: 2;
+            }
+            .hero-content .subtitle {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-ctas {
+                justify-content: center;
+            }
+            .hero-form-card {
+                order: 1;
+                margin-top: 2rem;
+            }
+            
+            .two-column-layout {
+                grid-template-columns: 1fr;
+            }
+            .two-column-layout .image-container { order: 1; }
+            .two-column-layout .text-content {
+                order: 2;
+                text-align: center;
+            }
+            .two-column-layout h2 { text-align: center; }
+            
+            .product-grid { grid-template-columns: 1fr 1fr; }
+            .benefits-grid { grid-template-columns: 1fr; }
+            .counter-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .claims-grid { grid-template-columns: 1fr; }
+            
+            #contact .container { grid-template-columns: 1fr; }
+            .contact-info h2 { text-align: center; }
+            .map-placeholder { height: 300px; }
+        }
+        
+        @media (max-width: 576px) {
+            .navbar .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            section { padding: 3rem 0; }
+            h1 { font-size: 2rem; }
+            h2 { margin-bottom: 2rem; }
+            .hero-content h1 { font-size: 2.25rem; }
+            .hero-content .subtitle { font-size: 1.1rem; }
+            .hero-ctas {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+            .hero-form-card { padding: 1.5rem; }
+            .form-group-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+            
+            .logo-grid { gap: 1.5rem; }
+            .logo-item { font-size: 1.2rem; }
+            
+            .product-grid { grid-template-columns: 1fr; }
+            .benefit-card { padding: 2rem; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="#" class="navbar-brand">
+                SV ENTERPRISES
+                <span>Motor & Vehicle Insurance</span>
+            </a>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#benefits">Benefits</a></li>
+                    <li><a href="#claims">Claims</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+            
+            <a href="#contact" class="btn btn-primary nav-contact-btn">Contact</a>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="hero" class="section-light">
+            <div class="container">
+                
+                <div class="hero-content animate-on-scroll animate-slide-right">
+                    <h1>Affordable & Quick Motor Insurance</h1>
+                    <p class="subtitle">SV Enterprises — Trusted Vehicle Insurance Partner in Bangalore.</p>
+                    
+                    <div class="hero-image-container">
+                        <svg class="hero-svg-car" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs><linearGradient id="carGradient" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:var(--color-primary);" /><stop offset="100%" style="stop-color:var(--color-primary-dark);" /></linearGradient></defs>
+                            <g><circle cx="55" cy="80" r="14" fill="#333"/><circle cx="145" cy="80" r="14" fill="#333"/><circle cx="55" cy="80" r="8" fill="#fff"/><circle cx="145" cy="80" r="8" fill="#fff"/><path d="M20,80 Q10,70 10,60 L10,50 Q10,30 30,30 L70,30 Q80,25 100,25 Q120,25 130,30 L170,30 Q190,30 190,50 L190,60 Q190,70 180,80 Z" fill="url(#carGradient)"/><path d="M75,32 L95,28 L125,28 L135,32 L130,45 L80,45 Z" fill="#EBF5FF" opacity="0.8"/><path d="M35,32 L70,32 L75,45 L40,45 Z" fill="#EBF5FF" opacity="0.8"/><path d="M140,32 L165,32 L160,45 L135,45 Z" fill="#EBF5FF" opacity="0.8"/></g>
+                        </svg>
+                        <svg class="hero-svg-bike" viewBox="0 0 150 100" xmlns="http://www.w3.org/2000/svg">
+                            <g><circle cx="35" cy="85" r="12" fill="#333"/><circle cx="115" cy="85" r="12" fill="#333"/><circle cx="35" cy="85" r="6" fill="#fff"/><circle cx="115" cy="85" r="6" fill="#fff"/><path d="M25,85 Q20,70 30,60 L60,30 Q65,25 75,25 Q85,25 90,30 L100,40 L120,55 Q130,60 130,70 L130,85 Z" fill="url(#carGradient)"/><path d="M95,40 L125,55 Q130,58 128,65 L100,60 Z" fill="#444"/><path d="M60,30 L50,20 M50,20 L45,22 M50,20 L55,22" stroke="#555" stroke-width="4" stroke-linecap="round"/></g>
+                        </svg>
+                    </div>
+
+                    <div class="hero-ctas">
+                        <a href="#hero-form" class="btn btn-primary"><i class="fa-solid fa-file-lines"></i> Get a Quote</a>
+                        <a href="https://wa.me/919380858219" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
+                    </div>
+                </div>
+
+                <div class="hero-form-card animate-on-scroll animate-slide-left" id="hero-form">
+                    <h3 style="text-align: center; margin-bottom: 1.5rem;">Get a Free Quote Now</h3>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter your mobile number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="insurance-type-hero">Insurance Type</label>
+                            <select id="insurance-type-hero" name="insurance-type" class="form-control">
+                                <option value="car">Car Insurance</option>
+                                <option value="bike">Bike Insurance</option>
+                                <option value="auto">Auto Insurance</option>
+                                <option value="commercial">Commercial Vehicle</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="vehicle-number-hero">Vehicle Number</label>
+                            <input type="text" id="vehicle-number-hero" name="vehicle-number" class="form-control" placeholder="e.g., KA-01-AB-1234">
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="logos" class="section-white">
+            <div class="container animate-on-scroll animate-fade-in">
+                <h3>We partner with all leading insurance companies</h3>
+                <div class="logo-grid">
+                    <div class="logo-item">Bajaj Allianz</div>
+                    <div class="logo-item">HDFC Ergo</div>
+                    <div class="logo-item">TATA AIG</div>
+                    <div class="logo-item">ICICI Lombard</div>
+                    <div class="logo-item">Go Digit</div>
+                    <div class="logo-item">Royal Sundaram</div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="about" class="section-light">
+            <div class="container">
+                <div class="two-column-layout">
+                    <div class="image-container animate-on-scroll animate-slide-right">
+                        <div class="icon">
+                            <i class="fa-solid fa-building-shield"></i>
+                        </div>
+                    </div>
+                    <div class="text-content animate-on-scroll animate-slide-left">
+                        <h2>Your Trusted Partner for Motor Insurance</h2>
+                        <p><strong>SV Enterprises</strong> is a leading motor insurance service provider in Rajajinagar, Bangalore. With years of experience, we are dedicated to offering simple, transparent, and affordable insurance solutions.</p>
+                        <p>Our mission is to protect you and your vehicle with the best plans from India's top insurers. We handle the paperwork so you can drive with peace of mind.</p>
+                        <a href="#contact" class="btn btn-primary">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="section-white">
+            <div class="container">
+                <h2 class="animate-on-scroll animate-fade-in">Our Products</h2>
+                <div class="product-grid">
+                    <div class="product-card animate-on-scroll animate-fade-in" style="transition-delay: 0.1s;">
+                        <div class="icon"><i class="fa-solid fa-car"></i></div>
+                        <h4>Car Insurance</h4>
+                        <p>Comprehensive and third-party plans for your car.</p>
+                    </div>
+                    <div class="product-card animate-on-scroll animate-fade-in" style="transition-delay: 0.2s;">
+                        <div class="icon"><i class="fa-solid fa-motorcycle"></i></div>
+                        <h4>Bike Insurance</h4>
+                        <p>Protect your two-wheeler with our best-in-class policies.</p>
+                    </div>
+                    <div class="product-card animate-on-scroll animate-fade-in" style="transition-delay: 0.3s;">
+                        <div class="icon"><i class="fa-solid fa-truck-pickup"></i></div>
+                        <h4>Auto Insurance</h4>
+                        <p>Specialized insurance for auto-rickshaws and more.</p>
+                    </div>
+                    <div class="product-card animate-on-scroll animate-fade-in" style="transition-delay: 0.4s;">
+                        <div class="icon"><i class="fa-solid fa-truck"></i></div>
+                        <h4>Commercial</h4>
+                        <p>Coverage for all your commercial and goods vehicles.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="benefits" class="section-light">
+            <div class="container">
+                <h2 class="animate-on-scroll animate-fade-in">Why Choose SV Enterprises?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card animate-on-scroll animate-slide-right">
+                        <div class="icon"><i class="fa-solid fa-tags"></i></div>
+                        <h3>Lowest Premiums</h3>
+                        <p>We compare plans from all top insurers to find you the absolute best price, guaranteed.</p>
+                    </div>
+                    <div class="benefit-card animate-on-scroll animate-fade-in" style="transition-delay: 0.2s;">
+                        <div class="icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h3>Fast Claim Support</h3>
+                        <p>Get dedicated local support in Bangalore for a smooth and quick claims process.</p>
+                    </div>
+                    <div class="benefit-card animate-on-scroll animate-slide-left">
+                        <div class="icon"><i class="fa-solid fa-handshake"></i></div>
+                        <h3>All Company Insurance</h3>
+                        <p>One-stop solution for policies from every major motor insurance company in India.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="counters" class="section-white">
+            <div class="container">
+                <div class="counter-grid">
+                    <div class="counter-item animate-on-scroll animate-fade-in">
+                        <span class="number" data-target="5000">0</span>+
+                        <p>Happy Customers</p>
+                    </div>
+                    <div class="counter-item animate-on-scroll animate-fade-in" style="transition-delay: 0.2s;">
+                        <span class="number" data-target="20">0</span>+
+                        <p>Insurance Partners</p>
+                    </div>
+                    <div class="counter-item animate-on-scroll animate-fade-in" style="transition-delay: 0.4s;">
+                        <span class="number" data-target="98">0</span>%
+                        <p>Claim Settlement</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="claims" class="section-light">
+            <div class="container">
+                <h2 class="animate-on-scroll animate-fade-in">Simple Claims Process</h2>
+                <div class="claims-grid">
+                    <div class="claim-step animate-on-scroll animate-fade-in" style="transition-delay: 0.1s;">
+                        <span class="step-number">STEP 1</span>
+                        <div class="icon"><i class="fa-solid fa-phone-volume"></i></div>
+                        <h3>Inform Us</h3>
+                        <p>Call us immediately after the incident. We are here to help 24/7.</p>
+                    </div>
+                    <div class="claim-step animate-on-scroll animate-fade-in" style="transition-delay: 0.3s;">
+                        <span class="step-number">STEP 2</span>
+                        <div class="icon"><i class="fa-solid fa-file-lines"></i></div>
+                        <h3>Submit Documents</h3>
+                        <p>We'll guide you on the simple paperwork required for your claim.</p>
+                    </div>
+                    <div class="claim-step animate-on-scroll animate-fade-in" style="transition-delay: 0.5s;">
+                        <span class="step-number">STEP 3</span>
+                        <div class="icon"><i class="fa-solid fa-car-on"></i></div>
+                        <h3>Relax & Recover</h3>
+                        <p>We process your claim quickly so you can get back on the road.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section-white" style="border-bottom: 0;">
+            <div class="container">
+                <div class="two-column-layout">
+                    
+                    <div class="contact-info animate-on-scroll animate-slide-right">
+                        <h2>Get in Touch</h2>
+                        <p>Have questions? We're here to help. Contact us via phone, email, or visit our office in Rajajinagar.</p>
+                        
+                        <div class="contact-item">
+                            <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="contact-item-content">
+                                <strong>Our Location</strong>
+                                Rajajinagar, Bangalore, Karnataka
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="icon"><i class="fa-solid fa-phone"></i></div>
+                            <div class="contact-item-content">
+                                <strong>Call Us</strong>
+                                <a href="tel:9380858219">9380858219</a><br>
+                                <a href="tel:7411812788">7411812788</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div class="contact-item-content">
+                                <strong>Email Us</strong>
+                                <a href="mailto:vijay@svinsurance.in">vijay@svinsurance.in</a>
+                            </div>
+                        </div>
+                        
+                        <div class="map-placeholder">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.755447177028!2d77.551206815238!3d12.98748369084534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3d8d641136b3%3A0x940c69d8689505a7!2sRajajinagar%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1678888888888!5m2!1sen!2sin" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Location of SV ENTERPRISES in Rajajinagar, Bangalore">
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <div class="hero-form-card animate-on-scroll animate-slide-left">
+                        <h3 style="text-align: center; margin-bottom: 1.5rem;">Send Us a Message</h3>
+                        <form action="#" method="POST">
+                            <div class="form-group">
+                                <label for="name-contact">Full Name</label>
+                                <input type="text" id="name-contact" name="name" class="form-control" placeholder="Enter your full name">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone-contact">Phone Number *</label>
+                                <input type="tel" id="phone-contact" name="phone" class="form-control" placeholder="Enter your mobile number" required>
+                            </div>
+                            <div class="form-group-grid">
+                                <div class="form-group">
+                                    <label for="insurance-type-contact">Insurance Type</label>
+                                    <select id="insurance-type-contact" name="insurance-type" class="form-control">
+                                        <option value="car">Car Insurance</option>
+                                        <option value="bike">Bike Insurance</option>
+                                        <option value="auto">Auto Insurance</option>
+                                        <option value="commercial">Commercial Vehicle</option>
+                                        <option value="other">Other Inquiry</option>
+                                    </select>
+                                </div>
+                                <div class="form-group optional-label">
+                                    <label for="vehicle-number-contact">Vehicle Number</label>
+                                    <input type="text" id="vehicle-number-contact" name="vehicle-number" class="form-control" placeholder="Optional">
+                                </div>
+                            </div>
+                            <div class="form-group optional-label">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email address">
+                            </div>
+                            <div class="form-group optional-label">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" class="form-control" rows="4" placeholder="How can we help you?"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">SV ENTERPRISES</div>
+                <p>Rajajinagar, Bangalore, Karnataka</p>
+                <p>
+                    <strong>Phone:</strong> <a href="tel:9380858219">9380858219</a> / <a href="tel:7411812788">7411812788</a>
+                </p>
+                <p>
+                    <strong>Email:</strong> <a href="mailto:vijay@svinsurance.in">vijay@svinsurance.in</a>
+                </p>
+            </div>
+            <div class="footer-copyright">
+                © 2024 SV ENTERPRISES. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            
+            // Scroll-triggered animations
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
+            elementsToAnimate.forEach(el => {
+                observer.observe(el);
+            });
+
+            // Animated counter
+            function animateCounters() {
+                const counters = document.querySelectorAll('#counters .number');
+                const speed = 200; // Speed of animation
+
+                counters.forEach(counter => {
+                    const updateCount = () => {
+                        const target = +counter.getAttribute('data-target');
+                        const count = +counter.innerText.replace('+', '');
+                        const inc = target / speed;
+
+                        if (count < target) {
+                            counter.innerText = Math.ceil(count + inc);
+                            setTimeout(updateCount, 15);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+                    updateCount();
+                });
+            }
+
+            // Observer for the counter section
+            const counterSection = document.getElementById('counters');
+            if (counterSection) {
+                const counterObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            animateCounters();
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                
+                counterObserver.observe(counterSection);
+            }
+            
+            // Smooth scroll for nav links
+            document.querySelectorAll('.nav-menu a, .nav-contact-btn').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const headerOffset = 80; // Height of the sticky navbar
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                    }
+                });
+            });
+
+        });
+    </script>
+
+</body>
 </html>
